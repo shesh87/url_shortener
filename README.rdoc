@@ -1,28 +1,18 @@
-== README
+URL shortener
+We need to make some money! It's time to start our own internet business.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Let's build a URL Shortener. We will make a web application where we can add new urls and we will be assigned a shortened version. Then if we visit that shortened version we will be redirected to the url provided.
 
-Things you may want to cover:
+Fer example, if the appropriate data is in place if you type in your browser:
 
-* Ruby version
+http://localhost:3000/345
+your should be redirected to
 
-* System dependencies
+http://ohmyweekpage.com/something
+Also we want to create a page with the 10 most recent URLs visited at /most_visited_pages URI
 
-* Configuration
+We should also have another page with a list of all url in the system and we should show when it was created and the number of times it was visited.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+http://ohmyweekpage.com/something / created on 25-12-2015 / visited 24 times
+http://www.google.com / created on 26-12-2015 / visited 4 times
+Hint: There is a redirect_to method in the controllers. Take a look at the docs ;)
