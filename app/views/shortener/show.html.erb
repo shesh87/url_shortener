@@ -1,2 +1,5 @@
 <h1>Your New URL</h1>
-<%= @url.current_url %>
+
+<% if flash[:short_url] %>
+	<%= flash[:short_url] %>
+<% end %>

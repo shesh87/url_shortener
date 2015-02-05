@@ -7,18 +7,21 @@ class ShortenerController < ApplicationController
 	def create
 		@url = Url.new(url_params) 
 		if @url.save
-			redirect_to(url_path(@url))
+			flash[:short_url] = "http://localhost:3000/url/#{@url.id}"
+			flash[:short_url_id] = @url.id
+			redirect_to(url_path)
 		else
 			render "bad"
 		end
 	end
 	
 	def show
-		@url = Url.new(params[:id])
+		@url = Url.find_by(id: flash[:short_url_id])
 	end
 
 	def redirect
-		redirect_to(url_path(params[:id]))
+		@rd = Url.find(params[:id])
+		redirect_to("http://#{@rd.current_url}")
 	end
 
 	private
