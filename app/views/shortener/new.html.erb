@@ -1,0 +1,12 @@
+<h1>URL Shortener</h1>
+<p>Get your short url on!</p>
+
+
+
+
+<%= form_for [@url] do |f|%>
+	<%= f.label :current_url%>
+	<%= f.text_field :current_url%>
+	<br>
+	<%= f.submit "Save"%>
+<% end %>
